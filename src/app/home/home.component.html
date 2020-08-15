@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row min-height-full">
+    <div class="col-8 menu-listing pr-0">
+    <div class="row ml-0 mr-0 min-height-full">
+        <div class="col-10 menu-show">
+          <h1>{{selectedMenuCat}}</h1>
+          <ul *ngFor="let foodItem of selectedFoodMenu">
+            <li >{{foodItem.name}}</li>
+          </ul>
+        </div>
+        <div class="col-2 pr-0 pl-0">
+          <div class="tab-btn-wraps" >
+            <ng-container *ngFor="let foodCat of allFoodCategories">
+              <button class="menu-tab-btn" (click)="onMenuSelect(foodCat)">{{foodCat | uppercase}}</button>
+            </ng-container>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-4">.col-sm-3</div>
+  </div>
+</div>
+

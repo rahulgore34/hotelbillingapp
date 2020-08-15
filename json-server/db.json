@@ -1,0 +1,222 @@
+{
+  "foodmenu": [
+    {
+      "id": "1",
+      "category": "vegsoup",
+      "fooditems": [
+        {
+          "name": "tomato soup",
+          "img": "https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 100
+        },
+        {
+          "name": "veg manchow soup",
+          "img": "https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 100
+        },
+        {
+          "name": "palak soup",
+          "img": "https://images.pexels.com/photos/3559899/pexels-photo-3559899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 100
+        },
+        {
+          "name": "veg hot & sour soup",
+          "img": "https://images.pexels.com/photos/2365944/pexels-photo-2365944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 100
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "nonvegsoup",
+      "fooditems": [
+        {
+          "name": "pandhara rassa",
+          "img": "https://images.pexels.com/photos/914909/pexels-photo-914909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 180
+        },
+        {
+          "name": "chicken manchow soup",
+          "img": "https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 110
+        },
+        {
+          "name": "mutton soup",
+          "img": "https://images.pexels.com/photos/3559899/pexels-photo-3559899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 150
+        },
+        {
+          "name": "chicken hot & sour soup",
+          "img": "https://images.pexels.com/photos/2532442/pexels-photo-2532442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 130
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "snacks",
+      "fooditems": [
+        {
+          "name": "fry papad",
+          "img": "https://www.archanaskitchen.com/images/archanaskitchen/BasicRecipes_HOW_TO/How_to_roast_papad.jpg",
+          "price": 35
+        },
+        {
+          "name": "roast papad",
+          "img": "https://www.archanaskitchen.com/images/archanaskitchen/BasicRecipes_HOW_TO/How_to_roast_papad.jpg",
+          "price": 25
+        },
+        {
+          "name": "onion pakoda",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2014/11/pakoda-recipe-480x270.jpg",
+          "price": 100
+        },
+        {
+          "name": "masala papad",
+          "img": "https://www.whiskaffair.com/wp-content/uploads/2014/07/Masala-Papad-4.jpg",
+          "price": 45
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "veg starters",
+      "fooditems": [
+        {
+          "name": "veg crispy",
+          "img": "https://images.pexels.com/photos/1352270/pexels-photo-1352270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "price": 200
+        },
+        {
+          "name": "paneer chilly",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2019/06/chilli-paneer-500x500.jpg",
+          "price": 210
+        },
+        {
+          "name": "paneer 65",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2014/11/paneer-65-fry.jpg",
+          "price": 215
+        },
+        {
+          "name": "veg chilly",
+          "img": "https://i.ytimg.com/vi/nZL7mE7VWi8/hqdefault.jpg",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "nonveg starters",
+      "fooditems": [
+        {
+          "name": "egg chilly",
+          "img": "https://i.ytimg.com/vi/fczRLJhrTq8/maxresdefault.jpg",
+          "price": 200
+        },
+        {
+          "name": "chicken chilly",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2018/07/chilli-chicken-recipe-500x500.jpg",
+          "price": 210
+        },
+        {
+          "name": "chicken 65",
+          "img": "https://recipe52.com/wp-content/uploads/2019/04/Chicken-65-1-of-1-2-480x270.jpg",
+          "price": 215
+        },
+        {
+          "name": "mutton fry",
+          "img": "https://c.ndtvimg.com/2018-09/to2u3k5g_mutton-fry_625x300_19_September_18.jpg",
+          "price": 250
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "veg main course",
+      "fooditems": [
+        {
+          "name": "mix veg",
+          "img": "https://ratlamee.com/wp-content/uploads/2018/10/Mix-Vegetable.jpg",
+          "price": 100
+        },
+        {
+          "name": "paneer butter masala",
+          "img": "https://nishkitchen.com/wp-content/uploads/2015/12/PANEER-BUTTER-MASALA-1b-480x480.jpg",
+          "price": 210
+        },
+        {
+          "name": "garlic palak",
+          "img": "https://www.archanaskitchen.com/images/archanaskitchen/0-Affiliate-Articles/Jain_Style_no_onion_and_no_garlic_Palak_and_corn_curry-7222.jpg",
+          "price": 180
+        },
+        {
+          "name": "kaju curry",
+          "img": "https://3.bp.blogspot.com/-EMVtQtH4WvU/XJSTvwDdqvI/AAAAAAAAG5k/snXHjTJYySAFmXBhDdPzCioaeAn-B0qbwCLcBGAs/s1600/IMG_9249.JPG",
+          "price": 215
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "category": "nonveg main course",
+      "fooditems": [
+        {
+          "name": "chicken masala",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2017/05/chicken-masala-recipe-1-500x500.jpg",
+          "price": 120
+        },
+        {
+          "name": "chicken butter masala",
+          "img": "https://nishkitchen.com/wp-content/uploads/2015/12/PANEER-BUTTER-MASALA-1b-480x480.jpg",
+          "price": 150
+        },
+        {
+          "name": "chicken handi",
+          "img": "https://i.ytimg.com/vi/tpcnRWuNzTk/maxresdefault.jpg",
+          "price": 200
+        },
+        {
+          "name": "mutton handi",
+          "img": "https://i.ytimg.com/vi/12sUU5wiGqg/maxresdefault.jpg",
+          "price": 210
+        },
+        {
+          "name": "egg masala",
+          "img": "https://theyummydelights.com/wp-content/uploads/2019/05/Dhaba-style-egg-curry.jpg",
+          "price": 165
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "category": "beverages",
+      "fooditems": [
+        {
+          "name": "tea",
+          "img": "https://cdn2.foodviva.com/static-content/food-images/tea-recipes/milk-tea-recipe/milk-tea-recipe.jpg",
+          "price": 10
+        },
+        {
+          "name": "coffee",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1200px-A_small_cup_of_coffee.JPG",
+          "price": 15
+        },
+        {
+          "name": "cold coffee",
+          "img": "https://i2.wp.com/www.vegrecipesofindia.com/wp-content/uploads/2015/05/cold-coffee-recipe-1a.jpg",
+          "price": 20
+        },
+        {
+          "name": "tak",
+          "img": "https://4.bp.blogspot.com/-J2120L5KyyM/WN4b2--sToI/AAAAAAAAEaw/0iTdtZBlWBgf_txOSjHeblYYc3nue76dQCLcB/s640/Masala%2B_Chaas.jpg",
+          "price": 15
+        },
+        {
+          "name": "lassi",
+          "img": "https://www.spicypunch.com/wp-content/uploads/2019/06/lassi-recipe-833x540.jpg",
+          "price": 20
+        }
+      ]
+    }
+  ]
+}

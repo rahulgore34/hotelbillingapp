@@ -1,0 +1,28 @@
+.menu-listing {
+  border: 2px solid red;
+  .menu-show {
+    border: 2px solid blue;
+  }
+}
+.tab-btn-wraps {
+.menu-tab-btn {
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  width: 100%;
+  &:nth-child(odd) {
+    background-color: blue;
+    color: #fff;
+    border-color: blue;
+  }
+  &:nth-child(even) {
+    background-color: red;
+    color: #fff;
+    border-color: red;
+  }
+  &:active {
+    transform: translateX(8px);
+  }
+}
+}
