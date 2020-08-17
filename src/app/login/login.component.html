@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="container h-100 h-100 d-flex justify-content-center align-items-center">
+  <div class="logn-form">
+    <form>
+      <div class="form-group">
+        <input type="password" placeholder="Enter your pin" name="pin" [(ngModel)]="pincode">
+        <button (click)="validatePin()">Go</button>
+        <p class="mb-0 bg-danger text-white" *ngIf="submitted && pincode != '1234'" style="font-size: 10px;">Wrong pin..! Please enter correct pin.</p>
+      </div>
+      <div class="btns-wrap text-white">
+        <div class="btns-txt"><button (click)="enterPin('1')">1</button></div>
+        <div class="btns-txt"><button (click)="enterPin('2')">2</button></div>
+        <div class="btns-txt"><button (click)="enterPin('3')">3</button></div>
+        <div class="btns-txt"><button (click)="enterPin('4')">4</button></div>
+        <div class="btns-txt"><button (click)="enterPin('5')">5</button></div>
+        <div class="btns-txt"><button (click)="enterPin('6')">6</button></div>
+        <div class="btns-txt"><button (click)="enterPin('7')">7</button></div>
+        <div class="btns-txt"><button (click)="enterPin('8')">8</button></div>
+        <div class="btns-txt"><button (click)="enterPin('9')">9</button></div>
+        <div class="btns-txt"><button (click)="enterPin('0')">0</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+

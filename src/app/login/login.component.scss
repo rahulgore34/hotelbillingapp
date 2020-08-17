@@ -1,0 +1,14 @@
+.logn-form {
+  border: 1px solid #fff;
+  height: fit-content;
+  padding: 15px;
+  .btns-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .btns-txt {
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

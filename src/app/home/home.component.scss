@@ -1,28 +1,113 @@
 .menu-listing {
-  border: 2px solid red;
   .menu-show {
-    border: 2px solid blue;
+    border-right: 5px dashed yellow;
+
+    .menu-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .menu-name {
+        background-color: yellow;
+      }
+
+      .card-title {
+        color: cyan;
+        background-color: black;
+        font-size: 19px;
+        padding: 4px;
+      }
+
+      .add-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: cyan;
+        background-color: black;
+        transition: all 0.6s;
+
+        &:hover {
+          background-color: cyan;
+          color: #000;
+        }
+      }
+
+      .card-img-top {
+        height: 180px;
+      }
+    }
   }
 }
+
+
 .tab-btn-wraps {
-.menu-tab-btn {
-  margin-bottom: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s;
-  width: 100%;
-  &:nth-child(odd) {
-    background-color: blue;
-    color: #fff;
-    border-color: blue;
-  }
-  &:nth-child(even) {
-    background-color: red;
-    color: #fff;
-    border-color: red;
-  }
-  &:active {
-    transform: translateX(8px);
+  .menu-tab-btn {
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    width: 100%;
+    padding: 15px;
+
+    &:nth-child(odd) {
+      background-color: blue;
+      color: #fff;
+      border-color: blue;
+    }
+
+    &:nth-child(even) {
+      background-color: red;
+      color: #fff;
+      border-color: red;
+    }
+
+    &:active {
+      transform: translateX(8px);
+    }
   }
 }
+
+.select-table-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 6px;
+
+  .table-content {
+    background-color: darkblue;
+    color: #fff;
+    display: inline-block;
+    padding: 9px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .table-content-active {
+    background-color: cyan;
+    color: #000;
+  }
+}
+
+.border-bottom-1 {
+  border-bottom: 5px dashed yellow;
+}
+
+.right-border {
+  border-right: 5px dashed yellow;
+}
+
+.remove-btn {
+  background-color: red;
+  color: #fff;
+  border: none;
+}
+.add-btn {
+  background-color: green;
+  color: #fff;
+  border: none;
+}
+
+.welcome-img {
+height: 86%;
+display: flex;
+justify-content: center;
+align-items: center;
 }

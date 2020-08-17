@@ -23,6 +23,16 @@
           "name": "veg hot & sour soup",
           "img": "https://images.pexels.com/photos/2365944/pexels-photo-2365944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "price": 100
+        },
+        {
+          "name": "veg lemon soup",
+          "img": "https://i2.wp.com/www.vegrecipesofindia.com/wp-content/uploads/2019/06/lemon-coriander-soup-recipe-500x375.jpg",
+          "price": 80
+        },
+        {
+          "name": "veg mix soup",
+          "img": "https://i.ytimg.com/vi/9xPNT1vukvI/maxresdefault.jpg",
+          "price": 90
         }
       ]
     },
@@ -49,6 +59,16 @@
           "name": "chicken hot & sour soup",
           "img": "https://images.pexels.com/photos/2532442/pexels-photo-2532442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "price": 130
+        },
+        {
+          "name": "mutton paya soup",
+          "img": "https://i.ytimg.com/vi/BDx8fTCP7II/maxresdefault.jpg",
+          "price": 120
+        },
+        {
+          "name": "egg soup",
+          "img": "https://shewearsmanyhats.com/wp-content/uploads/2015/02/egg-drop-soup-1-480x360.jpg",
+          "price": 90
         }
       ]
     },
@@ -75,6 +95,16 @@
           "name": "masala papad",
           "img": "https://www.whiskaffair.com/wp-content/uploads/2014/07/Masala-Papad-4.jpg",
           "price": 45
+        },
+        {
+          "name": "potato pakoda",
+          "img": "https://www.tarladalal.com/members/9306/procstepimgs/aloo-pakora-10-187687.jpg",
+          "price": 40
+        },
+        {
+          "name": "gobi paratha",
+          "img": "https://cdn3.foodviva.com/static-content/food-images/north-indian-recipes/gobhi-paratha-recipe/gobhi-paratha-recipe.jpg",
+          "price": 40
         }
       ]
     },
@@ -101,6 +131,16 @@
           "name": "veg chilly",
           "img": "https://i.ytimg.com/vi/nZL7mE7VWi8/hqdefault.jpg",
           "price": 200
+        },
+        {
+          "name": "veg bowls",
+          "img": "https://i.ytimg.com/vi/nZL7mE7VWi8/hqdefault.jpg",
+          "price": 200
+        },
+        {
+          "name": "paneer 65 gravy",
+          "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2014/11/paneer-65-fry.jpg",
+          "price": 220
         }
       ]
     },
