@@ -4,24 +4,36 @@
       <div class="row ml-0 mr-0 min-height-full">
         <div class="col-10 menu-show">
           <div class="d-flex justify-content-between border-bottom-1">
-            <div >
+            <div>
               <h1 class="text-white text-center">Hotel Star Palace</h1>
               <p class="mb-0 text-white">{{date | date: 'medium'}}</p>
             </div>
             <div class="pt-1">
-              <button type="button" class="btn btn-warning" [popover]="popTemplate"
-                popoverTitle="Please select table..">Select table
-              </button>
-              <ng-template #popTemplate>
-                <div class="select-table-wrap">
-                  <div class="table-content" *ngFor="let table of restauranttables" (click)="selectTable(table)"
-                    [ngClass]="{'table-content-active': table.occupied}">
-                    <span class="text-center"> {{table.name | uppercase}} </span>
+              <div><button (click)="openModal(template)" class="btn btn-warning">Select Table</button></div>
+              <ng-template #template>
+                <div class="modal-header">
+                  <div>
+                    <h4 class="modal-title pull-left">Select your <table></table>
+                    </h4>
+                  </div>
+                  <div>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div class="select-table-wrap">
+                    <div class="table-content" *ngFor="let table of restauranttables" (click)="selectTable(table)"
+                      [ngClass]="{'table-content-active': table.occupied}">
+                      <span class="text-center"> {{table.name | uppercase}} </span>
+                    </div>
                   </div>
                 </div>
               </ng-template>
             </div>
           </div>
+
           <div class="welcome-img" *ngIf="!menubtnClick">
             <img src="../../assets/imgs/welcome.gif" alt="welcome">
           </div>
@@ -41,7 +53,7 @@
           <div class="tab-btn-wraps">
             <h4 class="text-center pt-2 pb-2 text-white">Menu</h4>
             <ng-container *ngFor="let foodCat of foodMenu">
-              <button class="menu-tab-btn" (click)="onMenuSelect(foodCat)">{{foodCat.category | uppercase}}</button>
+              <button class="menu-tab-btn" [disabled]="!tableSelected" (click)="onMenuSelect(foodCat)">{{foodCat.category | uppercase}}</button>
             </ng-container>
           </div>
         </div>
@@ -53,8 +65,8 @@
         <div>
           <p class="m-0 text-center text-white">My order is..</p>
         </div>
-        <div><button (click)="openModal(template)" class="btn btn-warning">Pay Bill</button></div>
-        <ng-template #template>
+        <div><button (click)="openModal(template1)" class="btn btn-warning">Pay Bill</button></div>
+        <ng-template #template1>
           <div class="modal-header">
             <div>
               <h4 class="modal-title pull-left">Hotel Star Palace </h4>
@@ -96,7 +108,7 @@
               </tbody>
             </table>
             <div class="order-final-btns float-right">
-              <button (click)="printAndReset()">Print</button>
+              <button (click)="printAndReset(selectedTableName)">Print</button>
             </div>
           </div>
         </ng-template>

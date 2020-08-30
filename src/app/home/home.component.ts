@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   date = new Date();
   menubtnClick = false;
   tableSelected = false;
+
   constructor(
     private service: GetDataService,
     private utilService: UtilitiesService,
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
     this.selectedFoods.push(foodObj);
   }
-  removeFromCart(index:number) {
+  removeFromCart(index: number) {
     console.log();
     this.selectedFoods.splice(index, 1);
     this.updateTotalBillAmount();
@@ -80,18 +81,26 @@ export class HomeComponent implements OnInit, OnDestroy {
   totalBillAmount = 0;
 
   updateTotalBillAmount() {
-let sum = this.selectedFoods.map(o => o.totalPrice).reduce((a, c) => { return a + c });
-this.totalBillAmount = sum;
-console.log(this.selectedFoods);
-
+    let sum = this.selectedFoods
+      .map((o) => o.totalPrice)
+      .reduce((a, c) => {
+        return a + c;
+      });
+    this.totalBillAmount = sum;
+    console.log(this.selectedFoods);
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
-  printAndReset() {
-    this.modalRef.hide()
+  printAndReset(selectedTableName) {
+    this.modalRef.hide();
     this.tableSelected = false;
     this.selectedFoods = [];
     this.selectedFoodMenu = [];
+    for (let i = 0; i < this.restauranttables.length; i++) {
+      if (selectedTableName === this.restauranttables[i].name) {
+        this.restauranttables[i].occupied = false;
+      }
+    }
   }
 }
