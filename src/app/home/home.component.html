@@ -61,6 +61,9 @@
     </div>
     <div class="col-4" [ngClass]="{'d-none':!tableSelected}">
       <div class="top-bar d-flex justify-content-between">
+        <div>
+          <button pButton type="button" label="Summery" class="p-button-warning" (click)="getSummery()"></button>
+        </div>
         <div class="text-white">Table: {{selectedTableName}}</div>
         <div>
           <p class="m-0 text-center text-white">My order is..</p>
@@ -68,10 +71,15 @@
         <div><button (click)="openModal(template1)" class="btn btn-warning">Pay Bill</button></div>
         <ng-template #template1>
           <div class="modal-header">
-            <div>
-              <h4 class="modal-title pull-left">Hotel Star Palace </h4>
+            <h4 class="modal-title pull-left">Hotel Star Palace </h4>
+            <div class="d-flex justify-content-between">
+              <div>
               <p class="mb-0">{{date | date: 'medium'}}</p>
             </div>
+            <div>
+              <p class="pull-right">bill no : {{billNo}}</p>
+            </div>
+          </div>
             <div>
               <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                 <span aria-hidden="true">&times;</span>
@@ -91,10 +99,10 @@
               <tbody>
                 <tr *ngFor="let food of selectedFoods">
                   <td> <span>{{food.name}}</span></td>
-                  <td> <span>{{food.price}}</span></td>
+                  <td> <span>{{food.quantity}}</span></td>
                   <td>
                     <span>
-                      <span>{{food.quantity}}</span>
+                      <span>{{food.price}}</span>
                     </span>
                   </td>
                   <td>
@@ -129,9 +137,9 @@
             <td> <span>{{food.name}}</span></td>
             <td>
               <span>
-                <button class="remove-btn" (click)="updateQty(food, 'minus')">-</button>
+                <button class="remove-btn" [disabled]='food.quantity===0' (click)="updateQty(food, 'minus')">-</button>
                 <span class="d-inline-block pl-1 pr-2">{{food.quantity}}</span>
-                <button class="add-btn" (click)="updateQty(food, 'plus')">+</button>
+                <button class="add-btn"  (click)="updateQty(food, 'plus')">+</button>
               </span>
             </td>
             <td>

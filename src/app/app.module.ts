@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -12,11 +11,16 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import {ButtonModule} from 'primeng/button';
+import { BillSummeryComponent } from './bill-summery/bill-summery.component';
+import {TableModule} from 'primeng/table';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    BillSummeryComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,10 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     PopoverModule.forRoot(),
     ModalModule.forRoot(),
     FormsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ButtonModule,
+    TableModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { GetDataService } from '../../common/get-data.service';
 import { UtilitiesService } from '../shared/utilities.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   selectedFoodMenu: any;
   selectedMenuCat = 'Choose your favourites...';
   selectedFoods = [];
+  bill = [];
+  billNo = 0;
   restauranttables = [
     { id: '1', name: 'east-star', occupied: false },
     { id: '2', name: 'west-star', occupied: false },
@@ -29,7 +32,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private service: GetDataService,
     private utilService: UtilitiesService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.foodMenu = data;
       }
     });
+    this.bill = this.service.getBillData();
   }
 
   // tslint:disable-next-line: typedef
@@ -90,9 +95,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(this.selectedFoods);
   }
   openModal(template: TemplateRef<any>) {
+    this.billNo = this.bill.length + 1;
     this.modalRef = this.modalService.show(template);
   }
   printAndReset(selectedTableName) {
+    this.createRecords();
     this.modalRef.hide();
     this.tableSelected = false;
     this.selectedFoods = [];
@@ -102,5 +109,19 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.restauranttables[i].occupied = false;
       }
     }
+  }
+  createRecords() {
+    let obj = {
+      BillNo: this.billNo,
+      date: this.date,
+      billSummery: this.selectedFoods,
+      total: this.totalBillAmount,
+    };
+
+    this.bill.push(obj);
+    this.service.addBillData(this.bill);
+  }
+  getSummery() {
+    this.router.navigate(['bill-summery']);
   }
 }

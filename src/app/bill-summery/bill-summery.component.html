@@ -1,0 +1,78 @@
+<p-table *ngIf="!showChart" #dt [value]="billData" class="billdata-table" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"  [paginator]="true"
+  [rowHover]="true" [globalFilterFields]="['BillNo', 'date','total']"
+  [scrollable]="true" scrollHeight="320px">
+<ng-template pTemplate="caption">
+<div class="d-flex justify-content-between">
+  <div>
+    <h3>Hotel Star Palace</h3>
+  </div>
+<div>
+  <button pButton type="button" style="margin-right: 5px;" (click)="createChart()" label="Chart" class="p-button-warning"></button>
+  <button pButton type="button" style="margin-right: 5px;" (click)="exportExcel()" label="Export Records" class="p-button-warning"></button>
+  <button pButton type="button" (click)="exportExcelBill()" label="Export Bill Summery" class="p-button-warning"></button>
+</div>
+</div>
+</ng-template>
+<ng-template pTemplate="header">
+      <tr>
+          <th rowspan="2">Bill No</th>
+          <th rowspan="2">Date</th>
+          <th colspan="3" style="text-align: center;">Bill Summery</th>
+          <th rowspan="2">Total</th>
+      </tr>
+
+      <tr>
+          <th>Menu</th>
+          <th>Qty</th>
+          <th>Total Price</th>
+      </tr>
+      <tr>
+        <th> <input placeholder="Search" pInputText type="text" (input)="dt.filter($event.target.value,'BillNo', 'contains')"></th>
+        <th> <input placeholder="Search" pInputText type="text" (input)="dt.filter($event.target.value,'date', 'contains')"></th>
+        <th><input  placeholder="Search" pInputText type="text" (input)="myFilter($event.target.value)"></th>
+        <th></th>
+        <th></th>
+        <th><input placeholder="Search" pInputText type="text" (input)="dt.filter($event.target.value,'total', 'contains')"></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data >
+          <tr>
+            <td>{{data.BillNo}}</td>
+            <td>{{data.date | date: 'shortDate'}}</td>
+            <td colspan="3">
+              <p-table  [value]="data.billSummery" class="inner-table" #dt1 [globalFilterFields]="['name']" >
+                <ng-template pTemplate="body" let-d>
+                <tr >
+                  <td >{{d.name}}</td>
+                  <td>{{d.quantity}}</td>
+                  <td>{{d.totalPrice}}</td>
+                </tr>
+              </ng-template>
+              </p-table>
+            </td>
+
+            <td>{{data.total}}</td>
+        </tr>
+
+
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <tr>
+          <td colspan="5">Totals</td>
+          <td>{{finalTotal}}</td>
+      </tr>
+  </ng-template>
+</p-table>
+
+
+<!-- chart div -->
+<div style="display: block;" *ngIf="showChart" [ngClass]="{'bg-white': showChart}">
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>

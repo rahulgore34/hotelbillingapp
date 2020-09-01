@@ -1,0 +1,11 @@
+.billdata-table {
+    tr:not(.inner-table):nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .innerTable {
+      border: 1px solid blue;
+    }
+}
+body.body-bg {
+  background-color: white;
+}
