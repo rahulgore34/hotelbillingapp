@@ -38,7 +38,18 @@ export class BillSummeryComponent implements OnInit {
   innerTableFilter(value, contains) {
     this.mytable.filterGlobal(value, contains);
   }
+  filterTable(value, key, contains) {
+    if (value === '') {
+      this.billData = this.service.getBillData();
+    } else {
 
+      let arr = this.billData.filter((ele) => {
+        return ele[key] == value;
+      });
+      this.billData = arr;
+    }
+    this.calculateTotal();
+  }
   myFilter(value) {
     console.log(value);
     if (value === '') {
@@ -130,7 +141,6 @@ export class BillSummeryComponent implements OnInit {
   chartData = [];
   showChart = false;
   createChart() {
-
     let billNos = this.billData.map((ele) => ele.BillNo);
     let totals = this.billData.map((ele) => ele.total);
     console.log(billNos);
@@ -177,5 +187,8 @@ export class BillSummeryComponent implements OnInit {
       });
       this.saveAsExcelFile(excelBuffer, 'primengTable');
     });
+  }
+  logOut() {
+    this.service.logOut();
   }
 }

@@ -1,6 +1,7 @@
-<p-table *ngIf="!showChart" #dt [value]="billData" class="billdata-table" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"  [paginator]="true"
+<div [ngClass]="{'bg-white':!showChart}" *ngIf="!showChart" style="height: 750px;">
+  <p-table  #dt [value]="billData" class="billdata-table" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"  [paginator]="true"
   [rowHover]="true" [globalFilterFields]="['BillNo', 'date','total']"
-  [scrollable]="true" scrollHeight="320px">
+  [scrollable]="true" scrollHeight="382px">
 <ng-template pTemplate="caption">
 <div class="d-flex justify-content-between">
   <div>
@@ -9,7 +10,8 @@
 <div>
   <button pButton type="button" style="margin-right: 5px;" (click)="createChart()" label="Chart" class="p-button-warning"></button>
   <button pButton type="button" style="margin-right: 5px;" (click)="exportExcel()" label="Export Records" class="p-button-warning"></button>
-  <button pButton type="button" (click)="exportExcelBill()" label="Export Bill Summery" class="p-button-warning"></button>
+  <button pButton type="button" style="margin-right: 5px;" (click)="exportExcelBill()" label="Export Bill Summery" class="p-button-warning"></button>
+  <button pButton type="button" label="Logout" class="p-button-danger" (click)="logOut()"></button>
 </div>
 </div>
 </ng-template>
@@ -27,7 +29,7 @@
           <th>Total Price</th>
       </tr>
       <tr>
-        <th> <input placeholder="Search" pInputText type="text" (input)="dt.filter($event.target.value,'BillNo', 'contains')"></th>
+        <th> <input placeholder="Search" pInputText type="text" (input)="filterTable($event.target.value,'BillNo', 'contains')"></th>
         <th> <input placeholder="Search" pInputText type="text" (input)="dt.filter($event.target.value,'date', 'contains')"></th>
         <th><input  placeholder="Search" pInputText type="text" (input)="myFilter($event.target.value)"></th>
         <th></th>
@@ -50,7 +52,6 @@
               </ng-template>
               </p-table>
             </td>
-
             <td>{{data.total}}</td>
         </tr>
 
@@ -63,16 +64,32 @@
       </tr>
   </ng-template>
 </p-table>
+</div>
+
 
 
 <!-- chart div -->
-<div style="display: block;" *ngIf="showChart" [ngClass]="{'bg-white': showChart}">
-  <canvas baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-  </canvas>
+<div [ngClass]="{'bg-white': showChart}"  *ngIf="showChart" style="height:750px">
+  <div style="text-align: right;">
+    <button pButton type="button" label="Logout" class="p-button-danger m-1" (click)="logOut()"></button>
+  </div>
+
+  <div class="pt-4 d-flex flex-column align-items-center">
+    <div >
+      <h4>The Chart of Bill No Vs Total Price</h4>
+    </div>
+
+    <div style="display: block; width:500px;"  >
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+
+  </div>
+
 </div>

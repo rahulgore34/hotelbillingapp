@@ -7,7 +7,7 @@ import { BillSummeryComponent } from './bill-summery/bill-summery.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'home/:id', component: HomeComponent},
   { path: 'bill-summery',component: BillSummeryComponent},
   {path: '', redirectTo: '/home', pathMatch:'full'}
 ];

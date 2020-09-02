@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { GetDataService } from '../../common/get-data.service';
 import { UtilitiesService } from '../shared/utilities.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   selectedFoods = [];
   bill = [];
   billNo = 0;
+  adminFlag = '';
+  private sub: any;
   restauranttables = [
     { id: '1', name: 'east-star', occupied: false },
     { id: '2', name: 'west-star', occupied: false },
@@ -29,20 +31,26 @@ export class HomeComponent implements OnInit, OnDestroy {
   menubtnClick = false;
   tableSelected = false;
 
+
   constructor(
     private service: GetDataService,
     private utilService: UtilitiesService,
     private modalService: BsModalService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.sub = this.route.params.subscribe(params => {
+      this.adminFlag = params['id'];
+   });
     this.userSubscription = this.service.getData().subscribe((data) => {
       if (data) {
         this.foodMenu = data;
       }
     });
     this.bill = this.service.getBillData();
+
   }
 
   // tslint:disable-next-line: typedef
@@ -50,6 +58,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (this.userSubscription) {
       this.userSubscription.unsubscribe();
     }
+    if(this.sub){
+      this.sub.unsubscribe();
+    }
+
   }
 
   // tslint:disable-next-line: typedef
@@ -57,6 +69,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(selectedMenu);
     this.selectedFoodMenu = selectedMenu.fooditems;
     this.menubtnClick = true;
+    console.log(this.adminFlag);
+
+
   }
   addToCart(selectedFood) {
     let foodObj = {
@@ -123,5 +138,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   getSummery() {
     this.router.navigate(['bill-summery']);
+  }
+  logOut(){
+   this.service.logOut();
   }
 }
